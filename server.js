@@ -6,10 +6,17 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+const db = require("./src/app/models")
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Recreate db.");
+})
+
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to farmers catalog." });
-  });
-  
+  res.json({ message: "Welcome to farmers catalog." });
+});
+
+require("./src/app/routes/farmer.routes")(app);
+
 const port = process.env.PORT || '8080';
 
 app.listen(port, () => console.log(`API running on localhost:${port}`));
