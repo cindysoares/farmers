@@ -19,4 +19,4 @@ require("./src/app/routes/farmer.routes")(app)
 
 const port = process.env.PORT || '8080'
 
-app.listen(port, () => console.log(`API running on localhost:${port}`))
+app.listen(port, () => console.log(`API running on localhost:${port}`)) 

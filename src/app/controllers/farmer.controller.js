@@ -1,5 +1,5 @@
 const db = require("../models")
-const Farmer = db.farmers
+const Farmer = db.farmer
 const Op = db.Sequelize.Op
 
 exports.searchFarmers = (request, response) => {
