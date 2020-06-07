@@ -12,11 +12,11 @@ db.sequelize.sync({ force: true }).then(() => {
 })
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to farmers catalog." });
-});
+  res.json({ message: "Welcome to farmers catalog." })
+})
 
-require("./src/app/routes/farmer.routes")(app);
+require("./src/app/routes/farmer.routes")(app)
 
-const port = process.env.PORT || '8080';
+const port = process.env.PORT || '8080'
 
-app.listen(port, () => console.log(`API running on localhost:${port}`));
+app.listen(port, () => console.log(`API running on localhost:${port}`))

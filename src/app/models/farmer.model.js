@@ -1,11 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const Farmer = sequelize.define("farmer", {
-      id: {
-          type: Sequelize.STRING
-      }/*,
+        // sequelize creates the id column automatically
+      /*
       document: {
           type: Sequelize.document
-      }*/,
+      },*/
       name: {
           type: Sequelize.STRING
       }/*,
