@@ -1,17 +1,6 @@
 const config = require("../config/config.json")['development']
 
-const Sequelize = require("sequelize");
-const adminSequelize = new Sequelize('postgres', config.username, config.password, {
-    host: config.host,
-    dialect: config.dialect
-})
-
-const database = config.database;
-console.log(`Creating database "${database}"...`);
-adminSequelize.query(`CREATE DATABASE "${database}";`).then(() => console.log(`Database "${database}" created.`)).catch(
-    err => console.log(`Database "${database}" already exists.`)
-);
-
+const Sequelize = require("sequelize")
 const sequelize = new Sequelize(config.database, config.username, config.password, config)
 
 const db = {}
