@@ -6,7 +6,8 @@
     "createdb": "npx sequelize db:create",
     "createschema": "npx sequelize db:migrate",
     "dummydata": "npx sequelize db:seed:all",
-    "start-server": "node server.js",
+    "express": "node server.js",
+    "start-server": "npm-run-all build express",
     "ng": "ng",
     "start": "npm-run-all -c dropdb createdb createschema dummydata start-server",
     "build": "ng build",
@@ -38,6 +39,7 @@
     "pg": "^8.2.1",
     "rxjs": "~6.3.3",
     "sequelize": "^5.21.12",
+    "sequelize-auto": "^0.4.29",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
