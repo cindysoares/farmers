@@ -4,9 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Install
 
-- PostgreSQL
-- Angular-cli
-- Run `npm install`
+- Download and intall PostgreSQL
+- Download and install Node.JS
+- Run `npm install @angular/cl@7` to install Angular-cli 7
+- Run `npm install` in the root of the project to install dependencies
 
 ## Development server
 
