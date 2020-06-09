@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ControlValueAccessor, NgControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ControlValueAccessor, NgControl, Validators, FormControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { Farmer } from 'src/app/model/Farmer';
 import { FarmersearchService } from 'src/app/services/farmersearch.service'
@@ -11,9 +11,9 @@ import { FarmersearchService } from 'src/app/services/farmersearch.service'
   styleUrls: ['./farmer-search-card.component.css']
 })
 export class FarmerSearchCardComponent implements OnInit {
-  form = {
-    nameOrDoc: ""
-  }
+   
+  nameOrDoc = new FormControl('', Validators.required);
+
   farmer: Farmer
 
   constructor(private service: FarmersearchService) { }
@@ -22,8 +22,7 @@ export class FarmerSearchCardComponent implements OnInit {
   }
 
   searchFarmers() {
-    alert('searchFarmeres')
-    this.service.searchFarmers(this.form.nameOrDoc)
+    this.service.searchFarmers(this.nameOrDoc.value)
     .subscribe(data => {
       this.farmer = data[0]
     }, error =>  {

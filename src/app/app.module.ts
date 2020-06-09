@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FarmerSearchCardComponent } from './components/farmer-search-card/farmer-search-card.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -30,9 +30,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}, { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
