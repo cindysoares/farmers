@@ -1,24 +1,23 @@
 <div class="example-container">
     <mat-form-field appearance="fill">
       <mat-label>Nome ou Doc#</mat-label>
-      <input matInput>
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
+      <input matInput min="50">
+      <mat-icon matPreffix>search</mat-icon>
+      <button mat-icon-button matSuffix aria-label="Search" (click)="value=''">
+        <mat-icon>arrow_forward</mat-icon>
       </button>
     </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-      <mat-label>Agricultor</mat-label>
-      <input matInput>
+    <mat-form-field appearance="standard">
+      <mat-label>Destinatário</mat-label>
+      <input matInput readonly>
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="standard">
       <mat-label>Doc#</mat-label>
-      <input matInput>
+      <input matInput readonly>
     </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="standard">
       <mat-label>Endereço</mat-label>
-      <input matInput>
+      <input matInput readonly>
     </mat-form-field>
 </div>
