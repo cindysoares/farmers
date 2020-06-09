@@ -10,7 +10,7 @@ export class FarmersearchService {
 
   constructor(private http: HttpClient) { }
 
-  searchFarmers(searchParam) {
+  searchFarmers(searchParam: string) {
     return this.http.get(`${baseUrl}?search=${searchParam}`);
   }
 

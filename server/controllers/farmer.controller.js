@@ -6,12 +6,10 @@ exports.searchFarmers = (request, response) => {
     const nameOrDoc = request.query.search
     var condition = nameOrDoc ? { name: { [Op.iLike]: `%${nameOrDoc}%` } } : null
 
-    // If the search has more than one result, return any result that match’s.
     Farmer.findAll( {
-        where: condition,
-        limit: 1
+        where: condition
     } ).then( data => {
-        response.send(data[0])    
+        response.send(data)
     }).catch( err => {
         response.status(500).send({
             message: err.message

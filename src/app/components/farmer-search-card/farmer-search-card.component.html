@@ -1,45 +1,24 @@
-<div class="submit-form">
-  <div class="form-group">
-    <label for="nameOrDoc">Nome ou Doc#</label>
-    <input
-      type="text"
-      class="form-control"
-      id="nameOrDoc"
-      required
-      [(ngModel)]="tutorial.title"
-      name="title"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="name">Agricultor</label>
-    <input
-      class="form-control"
-      id="name"
-      [(ngModel)]="farmer.name"
-      name="name"
-    />
-  </div>
-  
-  <div class="form-group">
-    <label for="documentNumber">Doc#</label>
-    <input
-      class="form-control"
-      id="documentNumber"
-      [(ngModel)]="farmer.document.documentNumber"
-      name="documentNumber"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="address">Endereço</label>
-    <input
-      class="form-control"
-      id="address"
-      [(ngModel)]="farmer.address"
-      name="address"
-    />
-  </div>
-
-  <button (click)="searchFarmer()" class="btn btn-success">Search</button>
+<div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome ou Doc#</mat-label>
+      <input matInput>
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Agricultor</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Doc#</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Endereço</mat-label>
+      <input matInput>
+    </mat-form-field>
 </div>
