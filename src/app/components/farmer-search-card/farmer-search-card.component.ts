@@ -12,9 +12,10 @@ import { FarmersearchService } from 'src/app/services/farmersearch.service'
 })
 export class FarmerSearchCardComponent implements OnInit {
    
-  nameOrDoc = new FormControl('', Validators.required);
-
-  farmer: Farmer
+  nameOrDoc = new FormControl('', Validators.required)
+  name = new FormControl()
+  
+  selectedFarmer: Farmer
 
   constructor(private service: FarmersearchService) { }
 
@@ -24,7 +25,8 @@ export class FarmerSearchCardComponent implements OnInit {
   searchFarmers() {
     this.service.searchFarmers(this.nameOrDoc.value)
     .subscribe(data => {
-      this.farmer = data[0]
+      this.selectedFarmer = data[0] as Farmer
+      this.name.setValue(this.selectedFarmer.name)
     }, error =>  {
       console.log(error)
     })
