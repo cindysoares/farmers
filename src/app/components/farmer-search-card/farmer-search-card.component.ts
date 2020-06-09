@@ -16,6 +16,8 @@ export class FarmerSearchCardComponent implements OnInit {
    
   nameOrDoc = new FormControl('', Validators.required)
   name = new FormControl()
+  documentNumber = new FormControl()
+  address = new FormControl()
   
   selectedFarmer: Farmer
 
@@ -29,7 +31,15 @@ export class FarmerSearchCardComponent implements OnInit {
     this.farmerSearchAbstractProvider.searchFarmers(searchParams)
     .then(farmers => {
       this.selectedFarmer = farmers[0]
-      this.name.setValue(this.selectedFarmer.name)
+      if (this.selectedFarmer) {
+        this.name.setValue(this.selectedFarmer.name)
+        this.documentNumber.setValue("47512282911");
+        this.address.setValue("Rua Berrini 505 22050401");
+      } else {
+        this.name.setValue('')
+        this.documentNumber.setValue("");
+        this.address.setValue("");
+      }
     }).catch( error =>  {
       console.log(error)
     })

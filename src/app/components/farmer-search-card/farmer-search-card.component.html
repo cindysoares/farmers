@@ -14,10 +14,10 @@
     <br>
     <mat-form-field appearance="standard">
       <mat-label>Doc#</mat-label>
-      <input matInput readonly>
+      <input matInput readonly [formControl]="documentNumber">
     </mat-form-field>
     <mat-form-field appearance="standard">
       <mat-label>Endereço</mat-label>
-      <input matInput readonly>
+      <input matInput readonly [formControl]="address">
     </mat-form-field>
 </div>
