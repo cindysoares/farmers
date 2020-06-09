@@ -2,14 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
 
-## Installation
+## Install
 
 - PostgreSQL
 - Angular-cli
+- Run `npm install`
 
 ## Development server
 
-Run `npm install` and `npm start` for a dev server. Navigate to `http://localhost:8080/`.
+Run `npm start` for a dev server. Navigate to `http://localhost:8080/`. 
+It will create the database, tables and some dummy data before start the server. Check username and password to connect to your local postgres in `server/config/config.json` and change the values if necessary. 
+Add new farmers in `server/seeders/seed-farmers.js`.
 
 ## Code scaffolding
 
