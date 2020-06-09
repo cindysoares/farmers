@@ -24,7 +24,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running Jest tests
 
-Run `ng test`.
+Run `npm test`.
 
 ## Running end-to-end tests
 
