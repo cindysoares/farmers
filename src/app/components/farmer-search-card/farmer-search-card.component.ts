@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, ControlValueAccessor, NgControl, Validators, FormControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { Farmer } from 'src/app/model/Farmer';
 import { FarmersearchService } from 'src/app/services/farmersearch.service'
 import { FarmerSearchAbstractProvider, SearchParams } from 'src/app/providers/FarmerSearchAbstractProvider'
+
 
 @Component({
   selector: 'farmer-search-card',
@@ -12,7 +13,8 @@ import { FarmerSearchAbstractProvider, SearchParams } from 'src/app/providers/Fa
 })
 export class FarmerSearchCardComponent implements OnInit {
 
-  @Input() farmerSearchAbstractProvider: FarmerSearchAbstractProvider;
+  @Input() farmerSearchAbstractProvider: FarmerSearchAbstractProvider
+  @Output() onFarmerSelectedEvent = new EventEmitter()
    
   nameOrDoc = new FormControl('', Validators.required)
   name = new FormControl()
@@ -40,13 +42,10 @@ export class FarmerSearchCardComponent implements OnInit {
         this.documentNumber.setValue("");
         this.address.setValue("");
       }
+      this.onFarmerSelectedEvent.emit({value: this.selectedFarmer});
     }).catch( error =>  {
       console.log(error)
     })
-  }
-
-  onFarmerSelectedEvent() {
-
   }
 
 }

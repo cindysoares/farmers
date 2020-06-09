@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FarmersearchService } from './services/farmersearch.service';
 import { FarmerSearchAbstractProvider } from './providers/FarmerSearchAbstractProvider';
+import { Farmer } from './model/Farmer';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,9 @@ export class AppComponent {
   constructor(private service: FarmersearchService) {
     this.myFarmerSearchProvider = service
   }
+  
+  mySelectedFarmer(data: any) {
+    console.log('Selected farmer: ' + data)
+  }
+  
 }

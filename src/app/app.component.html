@@ -2,9 +2,8 @@
   <div style="text-align:left;">
     <h3>farmer-search-card</h3>
     <farmer-search-card
-    
-      [farmerSearchAbstractProvider]="myFarmerSearchProvider">>
-
+      (onFarmerSelectedEvent)="mySelectedFarmer()"
+      [farmerSearchAbstractProvider]="myFarmerSearchProvider">
     </farmer-search-card>
   </div>
 </div>
